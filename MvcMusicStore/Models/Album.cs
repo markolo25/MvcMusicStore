@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace MvcMusicStore.Models
 {
-    [Bind(Exclude = "AlbumId")]
     public class Album
     {
         [ScaffoldColumn(false)]
@@ -35,5 +34,6 @@ namespace MvcMusicStore.Models
 
         public virtual Genre Genre { get; set; }
         public virtual Artist Artist { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }
