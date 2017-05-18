@@ -15,6 +15,7 @@ namespace MvcMusicStore.Controllers
         private MusicStoreDB db = new MusicStoreDB();
 
         // GET: StoreManager
+        [Authorize]
         public ActionResult Index()
         {
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
